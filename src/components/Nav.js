@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import brandImage from "../Little-Lemon-logos/Asset 16@4x.png";
 
 export default function Nav() {
   return (
