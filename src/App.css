@@ -1,21 +1,35 @@
 html {
   scroll-behavior: smooth;
 }
-.logo-image {
-  width: 10rem;
-  height: 3.5rem;
+body {
+  font-size: 62.5%;
 }
-
+/* NavBar Section */
+.logo-image {
+  width: 3rem;
+}
+nav {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  opacity: 1;
+  z-index: 10;
+}
 nav ul {
-  width: 70%;
-  display: flex;
-  justify-items: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(7, 1fr);
+  justify-content: space-between;
   align-items: center;
+  width: 75%;
+  margin: 0 auto;
 }
 
 nav ul li {
   list-style: none;
-  margin-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  max-width: fit-content;
 }
 nav ul li:first-child {
   margin-right: 4rem;
@@ -27,60 +41,81 @@ nav ul li a {
   font-weight: 500;
 }
 .imag {
-  width: 12rem;
-  height: auto;
+  width: 20rem;
+  height: 13rem;
   border-radius: 12px;
 }
+
+/* Hero section */
 #main-hero {
   background-color: #495e57;
-  display: flex;
-  justify-content: center;
+  display: grid;
   align-items: center;
-  padding: 1rem;
+  justify-items: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  padding-top: 5rem;
+  height: 80vh;
+  margin: 0 auto;
 }
 .text {
-  width: 60%;
-  color: rgb(5, 5, 5);
+  /* width: 60%; */
   font-family: "Karla", serif;
-  /* max-width: 30ch; */
+  max-width: 30ch;
+  font-size: 18pt;
+  color: #fff;
 }
 .card {
-  width: 50%;
+  width: 70%;
 }
 .card header {
-  line-height: 0;
   position: relative;
+  line-height: 2.7rem;
+}
+.cardImage-box {
+  width: 80%;
 }
 .title {
   font-family: "Markazi Text", serif;
-  font-size: 3rem;
-  letter-spacing: 0.1rem;
+  font-size: 56pt;
   color: #f4ce14;
+  /* min-width: 200%; */
 }
 .sub-title {
   font-family: "Karla", serif;
-  font-size: 1.6rem;
+  font-size: 36pt;
+  text-align: center;
+  line-height: 0.8;
 }
-.card span {
+.title-lieu {
   position: absolute;
-  top: 1.7rem;
+  top: 2.5rem;
   color: white;
-  font-size: 1.8rem;
+  font-size: 24pt;
 }
 .button {
   background-color: #f4ce14;
   color: #000;
-  padding: 0.6rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding: 1rem;
   border-radius: 6px;
   border-style: none;
+  max-width: fit-content;
 }
+
+/* Highlights section */
+
 #highlights {
   width: 80%;
   margin: 0 auto;
 }
 #highlights header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
   align-items: center;
 }
 .card-item {
@@ -96,7 +131,9 @@ nav ul li a {
   background-color: #edefee;
 }
 .cards-container {
-  display: flex;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   border-radius: 12px;
 }
 .price {
@@ -109,4 +146,139 @@ nav ul li a {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+}
+
+/* Testimonials */
+.testimonials {
+  margin-top: 2rem;
+}
+.testimonials-container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  justify-items: center;
+}
+.testimonials-container .imag {
+  width: 5rem;
+}
+/* About Section */
+#about {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  justify-items: center;
+  align-items: center;
+  background-color: #f4ce14;
+}
+
+/* About section still, superimposing images */
+.cardImage-box {
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 0.5rem;
+}
+
+.cardImage-box img:first-of-type {
+  width: 13rem;
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 2;
+  overflow: hidden;
+}
+.cardImage-box img:last-of-type {
+  width: 13rem;
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+  overflow: hidden;
+}
+
+.title-about {
+  color: rgb(5, 5, 5);
+}
+/* Footer */
+footer {
+  background-color: #495e57;
+  border-bottom: 4px solid #000;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+  color: #f0ecec;
+  font-weight: 700;
+}
+.link {
+  display: block;
+  text-decoration: none;
+  color: #edefee;
+  font-size: 0.7rem;
+  padding-bottom: 0.2rem;
+}
+.link:hover {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+footer > div {
+  max-width: 4.5rem;
+}
+footer .footer-logo {
+  max-height: 5.5rem;
+  padding: 0.2rem;
+  background-color: #edefee;
+}
+footer img {
+  width: 4rem;
+  height: 5rem;
+}
+/* .grid-container {
+  width: 90%;
+  height: 80vh;
+  margin: 15px auto;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr 2fr 2fr 1fr;
+  grid-template-columns: repeat(3, 1fr) 100px;
+  grid-template-areas:
+    "header header header header" "box box box sidebar"
+    "main main main sidebar" "reviews reviews reviews sidebar" "about about about sidebar" "footer footer footer footer";
+  grid-gap: 15px;
+}
+
+.grid-container > * {
+  background-color: orangered;
+  padding: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+.grid-container .header {
+  grid-area: header;
+}
+.grid-container .main {
+  grid-area: main;
+}
+.grid-container .sidebar {
+  grid-area: sidebar;
+}
+.grid-container .footer {
+  grid-area: footer;
+}
+.grid-container .reviews {
+  grid-area: reviews;
+}
+.grid-container .about {
+  grid-area: about;
+} */
+@media only screen and (max-width: 380px) {
+  .title {
+    font-size: 54pt;
+  }
+  .title-lieu {
+    top: 5rem;
+    font-size: 24pt;
+  }
 }

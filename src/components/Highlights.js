@@ -8,9 +8,7 @@ export default function Highlights() {
     <section id="highlights">
       <header>
         <h3 className="sub-title">This weeks specials!</h3>
-        <div>
-          <button className="button">online Menu</button>
-        </div>
+        <button className="button">online Menu</button>
       </header>
       <div className="cards-container">
         <div class="card-item">
@@ -25,7 +23,7 @@ export default function Highlights() {
             rosemary croutons.
           </p>
           <p>
-            <button>Order a delivery </button>
+            <button className="button">Order a delivery </button>
           </p>
         </div>
         <div class="card-item">
@@ -39,7 +37,7 @@ export default function Highlights() {
             garlic and seasoned with salt and olive oil.
           </p>
           <p>
-            <button>Order a delivery </button>
+            <button className="button">Order a delivery </button>
           </p>
         </div>
         <div class="card-item">
@@ -53,7 +51,7 @@ export default function Highlights() {
             ingredient has been sourced and is as authrntic as can be imagined.
           </p>
           <p>
-            <button>Order a delivery </button>
+            <button className="button">Order a delivery </button>
           </p>
         </div>
       </div>
