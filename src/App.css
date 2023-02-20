@@ -41,7 +41,7 @@ nav ul li a {
   font-weight: 500;
 }
 .imag {
-  width: 20rem;
+  width: 17rem;
   height: 13rem;
   border-radius: 12px;
 }
@@ -50,12 +50,12 @@ nav ul li a {
 #main-hero {
   background-color: #495e57;
   display: grid;
-  align-items: center;
+  align-content: center;
+  /* align-items: center; */
   justify-items: center;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-  padding-top: 5rem;
-  height: 80vh;
+  padding: 5rem;
   margin: 0 auto;
 }
 .text {
@@ -84,7 +84,7 @@ nav ul li a {
 .sub-title {
   font-family: "Karla", serif;
   font-size: 36pt;
-  text-align: center;
+  /* text-align: center; */
   line-height: 0.8;
 }
 .title-lieu {
@@ -94,6 +94,7 @@ nav ul li a {
   font-size: 24pt;
 }
 .button {
+  text-decoration: none;
   background-color: #f4ce14;
   color: #000;
   font-weight: 500;
@@ -109,14 +110,18 @@ nav ul li a {
 #highlights {
   width: 80%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
-#highlights header {
+#highlights > header {
+  margin-top: 5rem;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: 1fr;
+  align-items: start;
+  justify-items: start;
 }
 .card-item {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -131,7 +136,7 @@ nav ul li a {
   background-color: #edefee;
 }
 .cards-container {
-  width: 90%;
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   border-radius: 12px;
@@ -149,23 +154,22 @@ nav ul li a {
 }
 
 /* Testimonials */
-.testimonials {
-  margin-top: 2rem;
+#testimonials {
+  width: 80%;
+  margin: 0 auto;
 }
 .testimonials-container {
-  width: 90%;
-  margin: 0 auto;
+  width: 80%;
   display: grid;
   grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
-  justify-items: center;
 }
 .testimonials-container .imag {
   width: 5rem;
 }
 /* About Section */
 #about {
-  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -174,8 +178,10 @@ nav ul li a {
   align-items: center;
   background-color: #f4ce14;
 }
-
-/* About section still, superimposing images */
+.card {
+  margin-top: 5rem;
+}
+/* Still in the About section, superimposing images */
 .cardImage-box {
   display: grid;
   grid-template-rows: 1fr;
@@ -196,7 +202,7 @@ nav ul li a {
 }
 
 .title-about {
-  color: rgb(5, 5, 5);
+  color: #050505;
 }
 /* Footer */
 footer {
@@ -234,6 +240,108 @@ footer img {
   width: 4rem;
   height: 5rem;
 }
+
+/* Booking-form styles */
+.booking-section {
+  background-image: url("./icons_assets/restaurant.jpg");
+  background-size: cover;
+  padding: 4rem;
+}
+form {
+  display: grid;
+  /* background-color: #b7bf1a; */
+  width: 45%;
+  max-width: "200px";
+  gap: "20px";
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto;
+  padding: 10px;
+  /* border: 2px solid black; */
+  border-radius: 12px;
+  background-color: rgba(248, 247, 247, 0.8);
+  box-shadow: -3px -5px 2px rgba(248, 247, 247, 0.8),
+    5px 5px 5px rgba(248, 247, 247, 0.8), 5px 5px 5px rgba(248, 247, 247, 0.8);
+}
+
+/* fieldset {
+  display: flex;
+  width: 480px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-direction: column;
+} */
+
+label {
+  /* margin-bottom: 8px; */
+  font-size: 1.5rem;
+  color: #050505;
+  font-weight: 700;
+}
+
+sup {
+  color: red;
+  top: -2px;
+  font-size: 95%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+input,
+select {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 32px;
+  padding: 0 8px;
+  font-size: 16px;
+}
+.looks-good::after {
+  font-weight: 600;
+  color: #1faa42;
+  content: "✅";
+}
+/* .Field {
+  position: relative;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+} */
+
+.FieldError {
+  /* position: absolute;
+  bottom: -6px; */
+  color: red;
+  font-size: 15px;
+}
+
+.errorStyle {
+  border: 2px solid #f84417;
+}
+
+button {
+  padding: 12px;
+  width: 240px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: darkblue;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
 /* .grid-container {
   width: 90%;
   height: 80vh;

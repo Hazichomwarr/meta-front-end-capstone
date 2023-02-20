@@ -10,19 +10,19 @@ export default function Footer() {
       </div>
       <div className="footer-nav">
         <h2 className="subtitle">Navigation</h2>
-        <Link className="link" to="/home">
+        <Link className="link" to="/">
           Home
         </Link>
         <Link className="link" to="/about">
           About
         </Link>
-        <Link className="link" to="/menu">
+        <Link className="link" to="/highlights">
           Menu
         </Link>
         <Link className="link" to="/reservations">
           Reservations
         </Link>
-        <Link className="link" to="/order">
+        <Link className="link" to="/order-online">
           Order
         </Link>
         <Link className="link" to="/login">
@@ -39,13 +39,17 @@ export default function Footer() {
       </div>
       <div className="footer-connect">
         <h2 className="subtitle">Connect</h2>
-        <Link className="link" to="">
+        <Link className="link" to="https://facebook.com" target={"_blank"}>
           Facebook
         </Link>
-        <Link className="link" to="">
+        <Link className="link" to="https://instagram.com" target={"_blank"}>
           instagram
         </Link>
-        <Link className="link" to="">
+        <Link
+          className="link"
+          to="https://www.littlelemon.com"
+          target={"_blank"}
+        >
           Join us
         </Link>
       </div>

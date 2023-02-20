@@ -1,5 +1,4 @@
 import React from "react";
-import cardImage from "../icons_assets/restauranfood.jpg";
 import marioAdrian1 from "../icons_assets/Mario-Adrian.jpg";
 import marioAdrian2 from "../icons_assets/Adrian-Mario.jpg";
 

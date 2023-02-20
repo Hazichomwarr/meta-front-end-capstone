@@ -16,7 +16,7 @@ export default function Nav() {
           <Link to={"/about"}>About</Link>
         </li>
         <li>
-          <Link to={"/menu"}>Menu</Link>
+          <Link to={"/highlights"}>Menu</Link>
         </li>
         <li>
           <Link to={"/reservations"}>Reservations</Link>
