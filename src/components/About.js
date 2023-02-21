@@ -19,7 +19,7 @@ export default function About() {
           thirty years later.
         </p>
       </div>
-      <div div className="cardImage-box">
+      <div className="cardImage-box">
         <img src={marioAdrian1} alt="owners" />
         <img src={marioAdrian2} alt="owners" />
       </div>

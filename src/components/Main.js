@@ -6,6 +6,7 @@ import BookingPage from "./BookingPage";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import ConfirmedBooking from "./ConfirmedBooking";
 
 export default function Main() {
   return (
@@ -16,6 +17,7 @@ export default function Main() {
         <Route path="/highlights" element={<Highlights />} />
         <Route path="/about" element={<About />} />
         <Route path="/reservations" element={<BookingPage />} />
+        <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
         <Route path="/online-order" element={""} />
         <Route path="/login" element={""} />
       </Routes>

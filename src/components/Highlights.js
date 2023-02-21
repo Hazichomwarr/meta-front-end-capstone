@@ -11,11 +11,11 @@ export default function Highlights() {
         <button className="button">online Menu</button>
       </header>
       <div className="cards-container">
-        <div class="card-item">
+        <div className="card-item">
           <img className="imag" src={greekSalad} alt="salad" />
           <div className="item-header-box">
             <h3>Greek salad</h3>
-            <p class="price">$12.99</p>
+            <p className="price">$12.99</p>
           </div>
           <p>
             The famous greek salad of crispy lettuce, peppers, olives and our
@@ -26,11 +26,11 @@ export default function Highlights() {
             <button className="button">Order a delivery </button>
           </p>
         </div>
-        <div class="card-item">
+        <div className="card-item">
           <img className="imag" src={bruchetta} alt="bruchetta" />
           <div className="item-header-box">
             <h3>Bruchetta</h3>
-            <p class="price">$5.99</p>
+            <p className="price">$5.99</p>
           </div>
           <p>
             Our Bruschetta is made from grilled bread that has been smeared with
@@ -40,11 +40,11 @@ export default function Highlights() {
             <button className="button">Order a delivery </button>
           </p>
         </div>
-        <div class="card-item">
+        <div className="card-item">
           <img className="imag" src={lemonPie} alt="lemon pie" />
           <div className="item-header-box">
             <h3>Lemon Dessert</h3>
-            <p class="price">$5.00</p>
+            <p className="price">$5.00</p>
           </div>
           <p>
             This comes straight from grandma's recipe book, every last

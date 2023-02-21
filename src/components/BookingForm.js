@@ -1,38 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function BookingForm(props) {
   // const ErrorMessage = () => {
   //   return <p className="FieldError">Please choose a valid date</p>;
-  // };
-  // const [date, setDate] = useState({ value: "", isTouched: false });
+  const [time, setTime] = useState({ value: "00:00", isTouched: false });
   const [date, setDate] = useState({ value: "", isTouched: false });
-  const [time, setTime] = useState("17:00");
-  const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState("casual");
+  const [guests, setGuests] = useState({ number: 0, isTouched: false });
+  const [occasion, setOccasion] = useState({
+    occasion: "",
+    isTouched: false,
+  });
 
   const isFormValid = () => {
-    if (date.value && time && guests && occasion) return true;
+    if (date.value && time.value && guests.value && occasion.value) return true;
     return false;
   };
 
   const clearForm = () => {
-    setTime("");
+    setTime({ value: "", isTouched: false });
     setDate({ value: "", isTouched: false });
-    setGuests("");
-    setOccasion("");
+    setGuests({ value: "", isTouched: false });
+    setOccasion({ value: "", isTouched: false });
   };
   const submitFunction = (e) => {
     e.preventDefault();
-    if (isFormValid()) {
-      props.handleSubmit();
-      clearForm();
-    }
+    props.handleSubmit(time, date, guests, occasion);
+    clearForm();
   };
 
   return (
     <div className="booking-section">
-      <form className="" onSubmit={submitFunction}>
-        <h3 className="sub-title">Book Table</h3>
+      <form className="bookingForm" onSubmit={submitFunction}>
+        <h3 className="sub-title">Book Now</h3>
         <label htmlFor="res-date">Choose date</label>
         <input
           type="date"
@@ -46,8 +45,13 @@ export default function BookingForm(props) {
         <label htmlFor="res-time">Choose time</label>
         <select
           id="res-time "
-          value={time}
-          onChange={(e) => props.dispatch({ type: date })}
+          value={time.value}
+          onBlur={() => setTime({ ...time, isTouched: true })}
+          onChange={(e) => setTime({ ...time, value: e.target.value })}
+          required
+          className={
+            time.isTouched && time.value === "00:00" ? "errorStyle" : ""
+          }
         >
           {props.availableTimes.map((d) => (
             <option key={d.id}>{d.time}</option>
@@ -56,18 +60,26 @@ export default function BookingForm(props) {
         <label htmlFor="guests">Number of guests</label>
         <input
           type="number"
-          placeholder="1"
-          min="1"
+          placeholder="0"
+          min="0"
           max="10"
           id="guests"
-          value={guests}
-          onChange={(e) => setGuests(e.target.value)}
+          value={guests.value}
+          onBlur={() => setGuests({ ...guests, isTouched: true })}
+          onChange={(e) => setGuests({ ...guests, value: e.target.value })}
+          required
+          className={
+            guests.isTouched && guests.value === "0" ? "errorStyle" : ""
+          }
         />
         <label htmlFor="occasion">Occasion</label>
         <select
           id="occasion"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
+          value={occasion.value}
+          onBlur={() => setOccasion({ ...occasion, isTouched: true })}
+          onChange={(e) => setOccasion({ ...occasion, value: e.target.value })}
+          required
+          className={occasion.isTouched && !occasion.value ? "errorStyle" : ""}
         >
           <option>Casual</option>
           <option>Birthday</option>
